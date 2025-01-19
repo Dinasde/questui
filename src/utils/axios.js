@@ -11,10 +11,10 @@ axiosInstance.interceptors.request.use(
   (request) => {
     // Get the token from localStorage
     const token = localStorage.getItem("token");
-    console.log("token", token);
+    
 
     request.headers.token = token;
-    console.log("Request", request);
+
     return request;
   },
   (error) => {
@@ -24,11 +24,11 @@ axiosInstance.interceptors.request.use(
 
 axiosInstance.interceptors.response.use(
   (response) => {
-    console.log({ response });
+    
     return response;
   },
   (error) => {
-    console.log({ error });
+
     return Promise.reject(error);
   }
 );
